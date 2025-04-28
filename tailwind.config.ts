@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom fashion-themed colors
+				fashion: {
+					pink: '#FFC0CB',
+					'light-pink': '#FFE4E1',
+					'dark-pink': '#FF69B4',
+					cream: '#FFFDD0',
+					black: '#333333',
+					white: '#FFFFFF',
 				}
 			},
 			borderRadius: {
