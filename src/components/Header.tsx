@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
@@ -28,7 +27,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <h1 className="text-2xl font-bold text-fashion-black">
-                <span className="text-primary">Diva</span> Moda
+                Closet Da Miss
               </h1>
             </Link>
           </div>

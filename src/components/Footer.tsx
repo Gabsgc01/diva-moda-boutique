@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ const Footer = () => {
           {/* Brand section */}
           <div className="md:col-span-1">
             <h2 className="text-xl font-bold mb-4">
-              <span className="text-primary">Diva</span> Moda
+              Closet Da Miss
             </h2>
             <p className="text-sm text-gray-600 mb-4">
               Elevate your style with our curated collection of women's fashion.
@@ -106,7 +105,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-300 mt-8 pt-6 flex flex-col md:flex-row justify-between">
           <p className="text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Diva Moda. All rights reserved.
+            &copy; {new Date().getFullYear()} Closet Da Miss. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-4">
