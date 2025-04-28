@@ -18,7 +18,7 @@ const Products = () => {
   const searchParam = queryParams.get('search') || '';
   
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
-  const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam);
+  const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'all');
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
@@ -43,7 +43,7 @@ const Products = () => {
     }
     
     // Filter by category
-    if (selectedCategory) {
+    if (selectedCategory && selectedCategory !== 'all') {
       result = result.filter(product => product.category === selectedCategory.toLowerCase());
     }
     
@@ -110,7 +110,7 @@ const Products = () => {
   };
 
   const handleClearFilters = () => {
-    setSelectedCategory('');
+    setSelectedCategory('all');
     setSelectedSizes([]);
     setSelectedColors([]);
     setPriceRange([0, 200]);
@@ -129,7 +129,7 @@ const Products = () => {
               Search results for: "{searchQuery}"
             </p>
           )}
-          {selectedCategory && (
+          {selectedCategory && selectedCategory !== 'all' && (
             <p className="mt-2 text-gray-600">
               Category: {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
             </p>
@@ -152,10 +152,10 @@ const Products = () => {
                 <h3 className="font-medium mb-3">Category</h3>
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                   <SelectTrigger>
-                    <SelectValue placeholder="All Categories" />
+                    <SelectValue placeholder="Select category" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Categories</SelectItem>
+                    <SelectItem value="all">All Categories</SelectItem>
                     {categories.map(category => (
                       <SelectItem 
                         key={category} 

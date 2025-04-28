@@ -199,13 +199,14 @@ const Admin = () => {
                       <div>
                         <Label htmlFor="category">Category</Label>
                         <Select
-                          value={formData.category}
+                          value={formData.category || "select-category"}
                           onValueChange={(value) => setFormData({ ...formData, category: value })}
                         >
                           <SelectTrigger>
                             <SelectValue placeholder="Select category" />
                           </SelectTrigger>
                           <SelectContent>
+                            <SelectItem value="select-category" disabled>Select category</SelectItem>
                             {categories.map(category => (
                               <SelectItem key={category.id} value={category.name.toLowerCase()}>
                                 {category.name}
